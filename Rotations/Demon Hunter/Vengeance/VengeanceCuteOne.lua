@@ -87,8 +87,6 @@ local function createOptions()
             br.player.module.BasicHealing(section)
 		    -- Fiery Brand
             br.ui:createSpinner(section, "Fiery Brand",  50,  0,  100,  5,  "|cffFFBB00Health Percentage to use at.");
-			-- Fel Devestation
-			br.ui:createSpinner(section, "Fel Devestation",  50,  0,  100,  5,  "|cffFFBB00Health Percentage to use at.");
             -- Demon Spikes
             br.ui:createSpinner(section, "Demon Spikes",  90,  0,  100,  5,  "|cffFFBB00Health Percentage to use at.");
             br.ui:createSpinnerWithout(section, "Hold Demon Spikes", 1, 0, 2, 1, "|cffFFBB00Number of Demon Spikes the bot will hold for manual use.");
@@ -336,7 +334,7 @@ actionList.Normal = function()
     end
     -- Fel Devastation
     -- fel_devastation
-    if ui.checked("Fel Devastation") and cast.able.felDevastation() and unit.hp() <= ui.value("Fel Devestation") then
+    if ui.checked("Fel Devastation") and cast.able.felDevastation() then
         if cast.felDevastation() then ui.debug("Casting Fel Devastation") return true end
     end
     -- Soul Cleave
